@@ -6,7 +6,7 @@
 /*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 16:16:31 by simon.lau         #+#    #+#             */
-/*   Updated: 2026/07/10 16:19:33 by simon.lau        ###   ########.fr       */
+/*   Updated: 2026/07/10 16:21:17 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,11 @@ int	main(int argc, char *argv[])
 {
 	char	*letter_ptr;
 
-	letter_ptr = argv[argc - 1];
+	if (argc < 1)
+	{
+		return (-9);
+	}
+	letter_ptr = argv[0];
 	while (*letter_ptr != '\0')
 	{
 		write(1, letter_ptr, 1);
